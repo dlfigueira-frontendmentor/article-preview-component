@@ -32,11 +32,11 @@
 
 .info-container {
   display: flex;
+  align-self: center;
   flex-direction: column;
   margin: 36px 32px 20px 32px;
   grid-area: info;
   justify-self: center;
-  align-self: center;
 }
 
 .info-container h1 {
@@ -59,14 +59,19 @@
 }
 
 .user-container {
+  display: none;
+}
+
+.user-container--visible {
   display: grid;
+  align-self: center;
   height: 40px;
-  margin: 0 32px 20px 32px;
+  margin: 0 32px;
+  grid-area: user;
   grid-template-columns: 40px auto 32px;
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "picture name share"
                        "picture date share";
-  grid-area: user;
 }
 
 .user-picture {
@@ -99,25 +104,57 @@
   grid-area: date;
 }
 
-.share-icon {
-  cursor: pointer;
-  grid-area: share;
-  height: 32px;
+.share-icon-container {
+  display: flex;
+  align-items: center;
   align-self: center;
-  background: url('/assets/icon-share.svg') no-repeat center center, var(--light-grayish-blue);
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
   border-radius: 50px;
+  background-color: var(--light-grayish-blue);
+  grid-area: share;
+}
+
+.share-icon-container--selected {
+  margin-left: 56px;
+  background-color: var(--desaturated-dark-blue);
+}
+
+.share-icon-container--selected img {
+  filter: brightness(0) saturate(100%) invert(96%) sepia(0%) saturate(7491%) hue-rotate(314deg) brightness(105%) contrast(104%);
 }
 
 .share-container {
   display: none;
-  grid-area: user;
+}
+
+.share-container img {
+  cursor: pointer;
+}
+
+.share-container p {
+  font-size: 13px;
+  font-weight: 200;
+  font-style: normal;
+  line-height: 20px;
+  letter-spacing: 5px;
+  color: var(--grayish-blue);
+  text-transform: uppercase;
 }
 
 .share-container--visible {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0 0 10px 10px;
+  background-color: var(--very-dark-grayish-blue);
+  grid-area: user;
+  padding: 0 32px;
 }
 
-@media (orientation:landscape) {
+@media (orientation: landscape) {
   .grid-container {
     width: 90%;
     max-width: 730px;

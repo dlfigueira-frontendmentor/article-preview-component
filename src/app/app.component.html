@@ -6,13 +6,23 @@
       <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got
         some simple tips to help you make any room feel complete.</p>
     </section>
-    <footer class="user-container">
+    <footer class="user-container" [ngClass]="isShareVisible ? '' : 'user-container--visible'">
       <div class="user-picture"></div>
       <h2>Michelle Appleton</h2>
       <p>28 Jun 2020</p>
-      <div class="share-icon"></div>
+      <div class="share-icon-container" (click)="toggleShare()" [ngClass]="isShareVisible ? 'share-icon--selected' : ''">
+        <img src="/assets/icon-share.svg" alt="share_icon">
+      </div>
     </footer>
-    <nav class="share-container"></nav>
+    <nav class="share-container" [ngClass]="isShareVisible ? 'share-container--visible' : ''">
+      <p>Share</p>
+      <img src="/assets/icon-facebook.svg" alt="share_icon" (click)="toggleShare()"/>
+      <img src="/assets/icon-twitter.svg" alt="share_icon" (click)="toggleShare()"/>
+      <img src="/assets/icon-pinterest.svg" alt="share_icon" (click)="toggleShare()"/>
+      <div class="share-icon-container share-icon-container--selected" (click)="toggleShare()">
+        <img src="/assets/icon-share.svg" alt="share_icon">
+      </div>
+    </nav>
   </article>
 </div>
 
