@@ -6,7 +6,7 @@
       <p>Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and uninviting. I’ve got
         some simple tips to help you make any room feel complete.</p>
     </section>
-    <footer class="user-container" [ngClass]="isShareVisible ? '' : 'user-container--visible'">
+    <footer class="user-container">
       <div class="user-picture"></div>
       <h2>Michelle Appleton</h2>
       <p>28 Jun 2020</p>
@@ -23,6 +23,7 @@
         <img src="/assets/icon-share.svg" alt="share_icon">
       </div>
     </nav>
+    <div class="arrow-down" *ngIf="isShareVisible"></div>
   </article>
 </div>
 

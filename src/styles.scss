@@ -8,4 +8,5 @@
 
 html, body {
   height: 100%;
+  background-color: var(--light-grayish-blue); //Also necessary because on portrait more, share button goes out of the view
 }
